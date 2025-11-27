@@ -183,15 +183,14 @@
   text-transform: uppercase;
   color: #000;
   opacity: 0.5;
-  text-shadow:
-    -1px 0 var(--stroke-color),
-    0 1px var(--stroke-color),
-    1px 0 var(--stroke-color),
-    0 -1px var(--stroke-color);
+  text-shadow: -1px 0 var(--stroke-color),
+  0 1px var(--stroke-color),
+  1px 0 var(--stroke-color),
+  0 -1px var(--stroke-color);
   mix-blend-mode: hard-light;
 }
 
-@supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+@supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
 
   .content__card-image-label {
     text-shadow: none;
@@ -274,6 +273,59 @@
   max-inline-size: 21px;
 }
 
-.popup__floppy-image{
+.dialog {
+  position: fixed;
+  inset: 0;
+  border: 2px solid #000;
+  padding: 30px;
+  background-color: var(--bg-color);
+}
+
+.dialog__description {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog__floppy-image {
   max-inline-size: 39px;
+}
+
+.dialog__label {
+  font-family: var(--font-family-accent), sans-serif;
+  font-weight: var(--font-weight-accent);
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.dialog__button {
+  min-block-size: 38px;
+  min-inline-size: 293px;
+}
+
+.dialog__button-text {
+  text-transform: uppercase;
+}
+
+.dialog[open] {
+  inline-size: 353px;
+  block-size: 191px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.dialog[open]::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+body:has(.dialog[open]) {
+  overflow: hidden;
 }

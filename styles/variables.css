@@ -11,13 +11,20 @@
   --bg-color: #fff;
   --color-text: #000;
   --bg-gradient:
-      repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
-      repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
-      linear-gradient(to bottom, #e7e7e7 0,1%, #1a1a1a 100%);
-  --padding-inline: clamp(16px, calc(16px + 106 * ((100vw - 375px) / 1065)), 122px);
-  --block-width: clamp(375px, calc(375px + ((100vw - 375px) * (375 / (700 - 375)))), 700px);
+    repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0, 1%, #1a1a1a 100%);
+  --padding-inline: clamp(
+    16px,
+    calc(16px + 106 * ((100vw - 375px) / 1065)),
+    122px
+  );
+  --block-width: clamp(
+    375px,
+    calc(375px + ((100vw - 375px) * (375 / (700 - 375)))),
+    700px
+  );
   --stroke-color: #fff;
   --heart-contour-color: #000;
   --heart-accent-color: #f00;
-
 }
