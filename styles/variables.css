@@ -1,1 +1,23 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-family-accent: 'PressStart2P';
+  --font-family-main: 'Inter-Variable';
+  --font-weight-accent: 400;
+  --font-weight-bold-text: 715;
+  --font-weight-regular-text: 410;
+  --font-size-main: 18px;
+  --font-size-title-accent: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+  --font-size-subtitle-accent: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+  --font-size-button: 14px;
+  --bg-color: #fff;
+  --color-text: #000;
+  --bg-gradient:
+      repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+      repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+      linear-gradient(to bottom, #e7e7e7 0,1%, #1a1a1a 100%);
+  --padding-inline: clamp(16px, calc(16px + 106 * ((100vw - 375px) / 1065)), 122px);
+  --block-width: clamp(375px, calc(375px + ((100vw - 375px) * (375 / (700 - 375)))), 700px);
+  --stroke-color: #fff;
+  --heart-contour-color: #000;
+  --heart-accent-color: #f00;
+
+}

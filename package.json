@@ -1,0 +1,28 @@
+{
+  "name": "zakrivayuschiy-teg-f",
+  "version": "1.0.0",
+  "description": "fourth_project",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo 'привет'\"",
+    "prettier_check": "prettier --check './**/*.{html,css,js}'",
+    "prettier_fix": "prettier --write './**/*.{html,css,js}'",
+    "stylelint": "stylelint \"**/*.{css,scss}\"",
+    "stylelint_fix": "stylelint \"**/*.{css,scss}\" --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alestra6019/zakrivayuschiy-teg-f.git"
+  },
+  "author": "Krylova Elena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alestra6019/zakrivayuschiy-teg-f/issues"
+  },
+  "homepage": "https://github.com/Alestra6019/zakrivayuschiy-teg-f#readme",
+  "dependencies": {
+    "npm": "^11.6.0",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.26.0"
+  }
+}
