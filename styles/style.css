@@ -37,7 +37,8 @@
   }
 }
 
-.header, .content {
+.header,
+.content {
   inline-size: var(--block-width);
 }
 
@@ -168,7 +169,8 @@
 }
 
 .content__filter-mix {
-  filter: brightness(149%) contrast(141%) grayscale(44%) hue-rotate(88deg) invert(28%) saturate(1.5);
+  filter: brightness(149%) contrast(141%) grayscale(44%) hue-rotate(88deg)
+    invert(28%) saturate(1.5);
 }
 
 .content__card-image-label {
@@ -183,10 +185,11 @@
   text-transform: uppercase;
   color: #000;
   opacity: 0.5;
-  text-shadow: -1px 0 var(--stroke-color),
-  0 1px var(--stroke-color),
-  1px 0 var(--stroke-color),
-  0 -1px var(--stroke-color);
+  text-shadow:
+    -1px 0 var(--stroke-color),
+    0 1px var(--stroke-color),
+    1px 0 var(--stroke-color),
+    0 -1px var(--stroke-color);
   mix-blend-mode: hard-light;
 }
 
@@ -246,7 +249,6 @@
   font-size: var(--font-size-button);
   color: var(--color-text);
   line-height: 90%;
-
 }
 
 .card__icon-button {
