@@ -23,6 +23,11 @@
     375px,
     calc(375px + ((100vw - 375px) * (375 / (700 - 375)))),
    700px);
+  --picture-size: clamp(
+      371px,
+      calc(371px + (100vw - 375px) * (375 / 1440)),
+      696px
+  );
   --border: 2px solid #000;
   --stroke-color: #fff;
   --heart-contour-color: #000;

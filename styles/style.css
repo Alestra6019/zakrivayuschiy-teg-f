@@ -52,10 +52,8 @@
 
 .header__logo {
   min-inline-size: var(--block-width, 700px);
-  /*min-block-size: 368px;*/
   padding: 130px var(--padding-inline);
   box-shadow: 0 0 0 2px #000;
-  /*border: var(--border);*/
   display: flex;
   gap: 20px;
   align-items: center;
@@ -80,30 +78,23 @@
   font-size: var(--font-size-subtitle-accent);
 }
 
-/*.content {*/
-/*  margin-block-end: -2px;*/
-/*}*/
-
 .content__list {
   display: flex;
   flex-wrap: wrap;
+  inline-size: inherit;
   gap: 50px;
 }
 
 .content__card {
   border: var(--border);
   margin-block-start: -1px;
+  inline-size: inherit;
 }
-
-/*.content__list > .content__card:nth-child(5),*/
-/*.content__list > .content__card:nth-child(7) {*/
-/*  margin-block-start: 2px;*/
-/*}*/
 
 .content__card-title {
   font-family: var(--font-family-main), fantasy;
   font-size: inherit;
-  line-height: 119%;
+  line-height: 120%;
   font-weight: 700;
   background-color: var(--bg-color);
   border-block-end: var(--border);
@@ -123,10 +114,11 @@
 
 .content__card-image {
   display: block;
-  /*inline-size: 100%;*/
+  inline-size: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center;
+  clip-path: inset(0 round 0);
 }
 
 .content__pale {
@@ -196,10 +188,6 @@
   gap: 25px;
 }
 
-/*.content__list > .content__card:nth-child(2) > .card-text-wrapper {*/
-/*  padding: 25px 26px;*/
-/*}*/
-
 .card-text {
   font-family: inherit;
   font-size: var(--font-size-main);
@@ -217,7 +205,7 @@
 
 .card__like {
   display: flex;
-  justify-content: right;
+  justify-content: end;
   align-items: center;
   gap: 5px;
 }
@@ -234,11 +222,33 @@
   background-color: var(--bg-color);
 }
 
+.button:focus,
+.button:focus-visible {
+  outline: none;
+}
+
+.button:focus {
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
 .button__text {
   position: relative;
   z-index: 1;
-  font-family: var(--font-family-accent), fantasy;
-  font-weight: var(--font-weight-accent);
   font-size: var(--font-size-button);
   color: #fff;
   line-height: 90%;
@@ -246,10 +256,22 @@
 }
 
 .card__icon-button {
+  min-block-size: 27px;
   padding: 0;
   border: 2px solid transparent;
   background-color: transparent;
   transition: border-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+  border-color: #000;
 }
 
 .card__like-button {
@@ -264,7 +286,7 @@
   gap: 7px;
   min-inline-size: 335px;
   min-block-size: 55px;
-  margin: 52px auto 100px;
+  margin: 50px auto 100px;
 }
 
 .content__floppy-image {
@@ -278,20 +300,19 @@
 
 .dialog {
   position: fixed;
-  inset: 0;
+  /*inset: 0;*/
   border: var(--border);
   background-color: var(--bg-color);
   transition: opacity 5s ease-in-out;
-  padding: 26px;
-  inline-size: 353px;
-  /*block-size: 191px;*/
+  /*inline-size: clamp(341px, 40vw, 375px);*/
+  inline-size: min(375px, 100vw - 30px);
 }
 
 .dialog__description {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   padding: 0 5px;
 }
@@ -311,7 +332,8 @@
 
 .dialog__button {
   min-block-size: 38px;
-  min-inline-size: 292px;
+  min-inline-size: 288px;
+  padding: 0;
 }
 
 .dialog__button-text {
@@ -324,6 +346,7 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+  padding: 26px;
 }
 
 .dialog[open]::backdrop {
@@ -334,54 +357,42 @@ body:has(.dialog[open]) {
   overflow: hidden;
 }
 
-dialog:not([open]) {
+.dialog:not([open]) {
   pointer-events: none;
   opacity: 0;
 }
 
+@media (width < 700px) {
+
+  .header,
+  .content {
+    min-inline-size: 0;
+    inline-size: 100%;
+  }
+}
+
 @media (width < 376px) {
+
+  .header,
+  .content {
+    inline-size: var(--block-width, 375px);
+  }
 
   .header__logo {
     box-shadow: none;
     border: var(--border);
-    width: 100%;
+    min-inline-size: 0;
+    inline-size: 100%;
     padding: 120px var(--padding-inline);
   }
 
-  /*.content__card-title {*/
-  /*  padding: 4px 10px;*/
-  /*}*/
-
-  /*.content__card {*/
-  /*  border: var(--border);*/
-  /*  margin-block-start: -1px;*/
-  /*}*/
-
   .content__card-image {
     width: 100%;
-    /*min-height: 369px;*/
-  }
-
-  .card-text-wrapper {
-    padding: 25px;
-  }
-
-  .card-text {
-    line-height: 115%;
   }
 
   .card__like {
     padding-top: 2px;
   }
-
-  /*.content__list > .content__card:nth-child(5),*/
-  /*.content__list > .content__card:nth-child(7) {*/
-  /*  margin-block-start: -2px;*/
-  /*}*/
-
-  /*.content__card:nth-child(8) > .card-text-wrapper {*/
-  /*  padding: 25px;*/
-  /*}*/
 
   .content__save-button {
     flex-direction: column;
@@ -394,42 +405,15 @@ dialog:not([open]) {
     max-inline-size: 28px;
   }
 
-  .dialog {
-    padding: 28px;
+  .dialog[open] {
+    padding: 26px 36px;
+  }
+
+  .dialog__description {
+    padding: 0;
   }
 
   .dialog__button {
-    min-inline-size: 261px;
+    min-inline-size: 257px;
   }
-}
-
-.button:focus,
-.button:focus-visible,
-.card__icon-button:focus {
-  outline: none;
-}
-
-.card__like-button:focus,
-.content__save-button:focus,
-.dialog__button:focus {
-  box-shadow: 2px 2px 0 0 #000;
-}
-
-.button::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: #000;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease-in-out;
-  z-index: 0;
-}
-
-.button:hover::before {
-  transform: scaleX(1);
-}
-
-.card__icon-button:focus-visible {
-  border-color: #000;
 }
