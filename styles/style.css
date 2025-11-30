@@ -314,7 +314,8 @@
   gap: 20px;
   justify-content: start;
   align-items: center;
-  padding: 0 5px;
+  box-sizing: border-box;
+  padding: 0;
 }
 
 .dialog__floppy-image {
@@ -332,8 +333,7 @@
 
 .dialog__button {
   min-block-size: 38px;
-  min-inline-size: 288px;
-  padding: 0;
+  inline-size: 100%;
 }
 
 .dialog__button-text {
@@ -343,10 +343,10 @@
 .dialog[open] {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: stretch;
   gap: 30px;
-  padding: 26px;
+  padding: 30px 40px;
+  box-sizing: border-box;
 }
 
 .dialog[open]::backdrop {
@@ -370,10 +370,6 @@ body:has(.dialog[open]) {
     padding: 120px var(--padding-inline, 16px);
   }
 
-  /*.content__card-image {*/
-  /*  width: 100%;*/
-  /*}*/
-
   .card__like {
     padding-top: 2px;
   }
@@ -395,9 +391,5 @@ body:has(.dialog[open]) {
 
   .dialog__description {
     padding: 0;
-  }
-
-  .dialog__button {
-    min-inline-size: 257px;
   }
 }
