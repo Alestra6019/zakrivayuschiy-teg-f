@@ -10,24 +10,18 @@
   --font-size-button: 14px;
   --bg-color: #fff;
   --color-text: #000;
-  --bg-gradient:
-      repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
-      repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
-      linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+  --bg-gradient: repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
+  repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
+  linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
   --padding-inline: clamp(
-    16px,
-    calc(16px + 106 * ((100vw - 320px) / 1120)),
-    122px
+      16px,
+      calc(16px + 106 * ((100vw - 375px) / 1065)),
+      122px
   );
   --block-width: clamp(
-    375px,
-    calc(375px + ((100vw - 375px) * (375 / (700 - 375)))),
-   700px);
-  --picture-size: clamp(
-      371px,
-      calc(371px + (100vw - 375px) * (375 / 1440)),
-      696px
-  );
+      375px,
+      calc(375px + ((100vw - 375px) * (375 / (700 - 375)))),
+      700px);
   --border: 2px solid #000;
   --stroke-color: #fff;
   --heart-contour-color: #000;
